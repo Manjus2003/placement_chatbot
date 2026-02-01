@@ -1,0 +1,53 @@
+# Exclude all Markdown files
+*.md
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Environment variables
+.env
+environment.env
+*.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data files (optional - uncomment if you want to exclude)
+# embeddings_store/
+# chunks_by_filetype/
+# _mmd_collected/
+# Placements_Data/
+# docs/
+# docs_interview/
+# ocr_results_full/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+cache_developments.txt

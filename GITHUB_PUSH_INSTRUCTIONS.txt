@@ -1,0 +1,156 @@
+# 🚀 GitHub Push Instructions
+
+Follow these steps to push your project to GitHub (excluding .md files).
+
+## Prerequisites
+
+### 1. Install Git
+Download and install Git from: https://git-scm.com/download/win
+
+After installation, restart your PowerShell terminal.
+
+### 2. Configure Git (First Time Only)
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your.email@example.com"
+```
+
+## Steps to Push to GitHub
+
+### Step 1: Create GitHub Repository
+1. Go to https://github.com
+2. Click "+" → "New repository"
+3. Name it: `placement-companion-chatbot`
+4. Keep it **Private** (recommended since it has API keys)
+5. Do NOT initialize with README
+6. Click "Create repository"
+
+### Step 2: Initialize Local Repository
+```bash
+cd c:\rag\Placement
+git init
+```
+
+### Step 3: Rename Main Branch (Optional but recommended)
+```bash
+git branch -M main
+```
+
+### Step 4: Add Files (excluding .md files)
+```bash
+# The .gitignore file will automatically exclude .md files
+git add .
+```
+
+### Step 5: Check What Will Be Committed
+```bash
+git status
+```
+
+Verify that .md files are NOT in the list (they should be excluded by .gitignore)
+
+### Step 6: Create First Commit
+```bash
+git commit -m "Initial commit: Placement Companion Chatbot with Agentic RAG"
+```
+
+### Step 7: Add Remote Repository
+Replace `YOUR_USERNAME` with your GitHub username:
+```bash
+git remote add origin https://github.com/YOUR_USERNAME/placement-companion-chatbot.git
+```
+
+### Step 8: Push to GitHub
+```bash
+git push -u origin main
+```
+
+You'll be prompted for your GitHub credentials:
+- Username: your GitHub username
+- Password: use a **Personal Access Token** (not your password)
+
+### How to Create Personal Access Token:
+1. Go to GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
+2. Generate new token (classic)
+3. Give it a name: "Placement Project"
+4. Select scopes: `repo` (full control)
+5. Generate token
+6. Copy and save it (you won't see it again!)
+7. Use this token as your password when pushing
+
+## Verify Upload
+
+1. Go to your GitHub repository URL
+2. Check that files are uploaded
+3. Verify that .md files are NOT present
+
+## Future Updates
+
+To push new changes:
+```bash
+git add .
+git commit -m "Description of changes"
+git push
+```
+
+## Important Notes
+
+⚠️ **Security:**
+- Your `environment.env` file with API keys is excluded by .gitignore
+- All .md files are excluded as requested
+- Keep the repository private if it contains sensitive data
+
+✅ **What's Included:**
+- All Python code files (.py)
+- Configuration files (requirements.txt)
+- Agentic module
+- Tool system
+- Data processing scripts
+
+❌ **What's Excluded:**
+- All .md documentation files
+- Environment files with API keys
+- Cache files (__pycache__)
+- Large data directories (optional)
+
+## Troubleshooting
+
+**Issue: "Git is not recognized"**
+- Install Git from https://git-scm.com/download/win
+- Restart PowerShell
+
+**Issue: "Authentication failed"**
+- Use Personal Access Token, not password
+- Make sure token has `repo` permissions
+
+**Issue: "Repository not found"**
+- Check the remote URL with: `git remote -v`
+- Verify repository name on GitHub
+
+**Issue: ".md files are being pushed"**
+- Check .gitignore file exists
+- Make sure it contains `*.md`
+- Run: `git rm --cached *.md` to remove from staging
+
+## Quick Commands Reference
+
+```bash
+# Check status
+git status
+
+# See what's excluded by gitignore
+git status --ignored
+
+# View commit history
+git log --oneline
+
+# Remove file from Git (keep local)
+git rm --cached filename
+
+# Undo last commit (keep changes)
+git reset --soft HEAD~1
+```
+
+---
+
+Good luck with your GitHub upload! 🎉
